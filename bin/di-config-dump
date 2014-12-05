@@ -11,10 +11,10 @@ if (isset($argv[1])) {
     $input = $argv[1];
     $builder = new FOA\DiConfig\Builder();
     if (is_dir($input)) {
-        echo $builder->fromDirectory($dir);
+        echo $builder->fromDirectory($input);
     }
     if (is_file($input)) {
-        echo $builder->fromFile($file);
+        echo $builder->fromFile($input);
     }
 } else {
     showhelp();

@@ -16,6 +16,7 @@ class Builder
         'Aura\Web\Request' => 'aura/web-kernel:request',
         'Aura\Web\Response' => 'aura/web-kernel:response',
         'Aura\Web\ResponseSender' => 'aura/web-kernel:response_sender',
+        'Psr\Log\LoggerInterface' => 'aura/project-kernel:logger',
     );
     private $parser;
     
@@ -48,7 +49,7 @@ class Builder
         foreach ($class_params as $class => $params) {
             foreach ($params as $param => $type_hint) {                
                 $text .= '$di->params[\'' . $class . '\'][\'' . $param . '\'] = ';
-                if ($this->alias[$type_hint] && $framework) {
+                if (isset($this->alias[$type_hint]) && $framework) {
                     $text .= '$di->lazyGet(\'' . $this->alias[$type_hint] . '\');' . PHP_EOL;
                 } else {
                     $text .= '$di->lazyNew(\'' . $type_hint . '\');' . PHP_EOL;
