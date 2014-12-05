@@ -27,5 +27,10 @@
             "name": "FOA.DiConfig Contributors",
             "homepage": "https://github.com/friendsofaura/FOA.DiConfig/contributors"
         }
-    ]
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
 }
