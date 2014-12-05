@@ -1,12 +1,31 @@
 {
     "name": "foa/di-config",
+    "type": "library",
+    "description": "Build aura di configuration values",
+    "keywords": [
+        "di",
+        "config",
+        "class"
+    ],
     "require": {
         "crodas/class-info": "~0.1"
     },
+    "homepage": "https://github.com/friendsofaura",
+    "license": "BSD-2-Clause",
     "autoload": {
         "psr-4": {
             "FOA\\DiConfig\\": "src/"
         }
     },
-    "bin": ["bin/di-config-dump"]
+    "bin": ["bin/di-config-dump"],
+    "authors": [
+        {
+            "name": "Hari KT",
+            "homepage": "http://harikt.com"
+        },
+        {
+            "name": "FOA.DiConfig Contributors",
+            "homepage": "https://github.com/friendsofaura/FOA.DiConfig/contributors"
+        }
+    ]
 }
