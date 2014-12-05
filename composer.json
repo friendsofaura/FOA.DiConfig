@@ -1,0 +1,12 @@
+{
+    "name": "foa/di-config",
+    "require": {
+        "crodas/class-info": "~0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "FOA\\DiConfig\\": "src/"
+        }
+    },
+    "bin": ["bin/di-config-dump"]
+}

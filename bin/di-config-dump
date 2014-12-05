@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+require dirname(dirname(dirname(__DIR__))) . '/autoload.php';
+
+function showhelp() {
+    echo "Usage : vendor/bin/di-config-dump /real/path/to/file.php" . PHP_EOL;
+    echo "Usage : vendor/bin/di-config-dump /real/path/to/directory" . PHP_EOL;
+}
+
+if (isset($argv[1])) {
+    $input = $argv[1];
+    $builder = new FOA\DiConfig\Builder();
+    if (is_dir($input)) {
+        echo $builder->fromDirectory($dir);
+    }
+    if (is_file($input)) {
+        echo $builder->fromFile($file);
+    }
+} else {
+    showhelp();
+}
