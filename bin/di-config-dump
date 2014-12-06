@@ -7,14 +7,16 @@ function showhelp() {
     echo "Usage : vendor/bin/di-config-dump /real/path/to/directory" . PHP_EOL;
 }
 
+$framework = isset($argv[2]) ? false : true;
+
 if (isset($argv[1])) {
     $input = $argv[1];
     $builder = new FOA\DiConfig\Builder();
     if (is_dir($input)) {
-        echo $builder->fromDirectory($input);
+        echo $builder->fromDirectory($input, $framework);
     }
     if (is_file($input)) {
-        echo $builder->fromFile($input);
+        echo $builder->fromFile($input, $framework);
     }
 } else {
     showhelp();
